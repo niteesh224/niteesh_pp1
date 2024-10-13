@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
+app.use(cors());
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, './uploads')));
