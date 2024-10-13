@@ -39,6 +39,8 @@ app.get('/', (req, res) => {
 // Route to handle POST requests to /contacts
 app.post('/contacts', async (req, res) => {
     const { name, email, message } = req.body;
+    console.log('Request received:', req.body);
+    res.status(200).send('Data received');
 
     // Create a new contact document
     const newContact = new Contact({ name, email, message });
