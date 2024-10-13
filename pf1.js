@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, '/uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 // MongoDB connection URI from environment variable
 const mongoUri = process.env.MONGO_URI || "mongodb+srv://niteeshkumar224:MtHvyEQ9t8w4WBXhKTWC@cluster0.qdy7z.mongodb.net/"; // Local fallback for testing
