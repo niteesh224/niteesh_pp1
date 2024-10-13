@@ -53,7 +53,7 @@ app.post('/contacts', async (req, res) => {
 });
 
 // Route to get all contacts
-app.get('/contact', async (req, res) => {
+app.get('localhost:3000/contact', async (req, res) => {
     try {
         const contacts = await Contact.find();
         res.json(contacts);
