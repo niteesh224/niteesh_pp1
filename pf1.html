@@ -123,6 +123,17 @@
       text-align: center;
       padding: 10px 0;
     }
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+      text-align: center;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -141,7 +152,6 @@
     <a href="#contact">Contact</a>
   </nav>
   
-
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
@@ -210,15 +220,15 @@
     document.getElementById('contactForm').addEventListener('submit', async function(event) {
       event.preventDefault();
   
-      const name = document.getElementById('name').value().trim();
-      const email = document.getElementById('email').value().trim();
-      const message = document.getElementById('message').value().trim();
+      const name = document.getElementById('name').value.trim(); // Corrected here
+      const email = document.getElementById('email').value.trim(); // Corrected here
+      const message = document.getElementById('message').value.trim(); // Corrected here
       const responseMessage = document.getElementById('responseMessage');
       responseMessage.textContent = '';  // Reset any previous messages
   
       try {
         // Submit the form via a POST request to the backend
-        const response = await fetch('/contacts', {
+        const response = await fetch('/contacts', { // Make sure this endpoint is correct
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
